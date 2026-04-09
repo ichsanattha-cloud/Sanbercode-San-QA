@@ -66,7 +66,7 @@ describe('OrangeHRM Login Test with Intercept', () => {
 
     cy.intercept('POST', '**/auth/validate').as('emptyPassword')
 
-    cy.get('input[name="username"]').type('Admin')
+    cy.get('input[name="username"]').type('admin')
     cy.get('button[type="submit"]').click()
 
     cy.get('@emptyPassword.all').should('have.length', 0)
